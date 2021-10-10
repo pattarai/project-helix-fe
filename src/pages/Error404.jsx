@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react'
 
-export default function Error404() {
-  return (
-    <div>
-      <h1 className="error-text">Error 404</h1>
-    </div>
-  );
+function Error404() {
+    return (
+        <div>
+            Oops! we couldn't fetch you the page!
+        </div>
+    )
 }
+
+export default Error404
