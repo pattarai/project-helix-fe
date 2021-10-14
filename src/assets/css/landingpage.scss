@@ -1,22 +1,13 @@
 .wave {
-    position:absolute;
-    bottom: 1px;
-    left:0;
+  position: absolute;
+  bottom: 0;
 }
 
-.landing-main{
-    text-align: center;
-    align-items: center;  
-    padding: 70px 0;
-    justify-content: center;
+.landing-bg {
+  background-color: #032940;
 }
 
-
-.btn{
-   margin: 10px;
+.landing-main {
+  position: relative;
+  z-index: 2;
 }
-
-
-
-
-
