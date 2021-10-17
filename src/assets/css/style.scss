@@ -1,6 +1,7 @@
 @import "./landingpage.scss";
 @import "~bootstrap/scss/bootstrap";
 @import "../fonts/fonts.css";
+@import "./home.scss";
 
 * {
   margin: 0;
@@ -16,7 +17,7 @@ h3 {
 }
 
 body {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .full-vh {
