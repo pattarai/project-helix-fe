@@ -19,33 +19,43 @@ function LiveStream() {
   }, []);
   return (
     <>
-    {videoItems.length >= 1 && (
-      <Marquee
-        direction="right"
-        speed={30}
-        gradient
-        gradientWidth={0}
-        gradientColor={[31, 31, 31]}
-      >
-        {videoItems.map((videos, id) => (
-          <button
-            key={id}
-            onClick={() => {
-              window.scrollTo(0, 0);
-              var livestream = document.getElementById("youtubeLive");
-              livestream.style.display = "block";
-              document.getElementById("no-stream").style.display = "none";
-              livestream.src =
-                "https://www.youtube.com/embed/" +
-                videos.contentDetails.videoId;
-            }}
-          >
-          </button>
-        ))}
-      </Marquee>
-    )}
-  </>
-  )
+      {videoItems.length >= 1 && (
+        <Marquee
+          direction="right"
+          speed={30}
+          gradient
+          gradientWidth={0}
+          gradientColor={[31, 31, 31]}
+        >
+          {videoItems.map((videos, id) => (
+            <button
+              key={id}
+              onClick={() => {
+                window.scrollTo(0, 0);
+                var livestream = document.getElementById("youtubeLive");
+                livestream.style.display = "block";
+                document.getElementById("no-stream").style.display = "none";
+                livestream.src =
+                  "https://www.youtube.com/embed/" +
+                  videos.contentDetails.videoId;
+              }}
+            >
+              <div className="card" style={{ width: "18rem" }}>
+                <img
+                  src={videos.snippet.thumbnails.high.url}
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{videos.snippet.title}</h5>
+                </div>
+              </div>
+            </button>
+          ))}
+        </Marquee>
+      )}
+    </>
+  );
 }
 
-export default LiveStream
+export default LiveStream;
