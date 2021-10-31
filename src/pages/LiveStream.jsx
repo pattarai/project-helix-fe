@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Marquee from "react-fast-marquee";
+import Loader from "../components/Loader";
 
 function LiveStream() {
+  const [loader, setLoader] = useState(true);
   const { REACT_APP_YOUTUBE_API_KEY } = process.env;
   const [videoItems, setVideoItems] = useState([]);
 
@@ -14,12 +16,15 @@ function LiveStream() {
       .then((res) => {
         const videoitems = res.data.items;
         setVideoItems(videoitems);
+        setLoader(false);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
-      {videoItems.length >= 1 && (
+      {loader ? (
+        <Loader />
+      ) : videoItems.length > 0 ? (
         <Marquee
           direction="right"
           speed={30}
@@ -53,6 +58,8 @@ function LiveStream() {
             </button>
           ))}
         </Marquee>
+      ) : (
+        <h1>No Data</h1>
       )}
     </>
   );
