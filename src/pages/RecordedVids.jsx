@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Marquee from "react-fast-marquee";
+import PopUp from "../components/PopUpCards";
+import NavBar from "../components/NavBar";
 import Loader from "../components/Loader";
 
-function RecordedVids() {
+
+export default function RecordedVids() {
   const [loader, setLoader] = useState(true);
   const { REACT_APP_YOUTUBE_API_KEY } = process.env;
   const [videoItems, setVideoItems] = useState([]);
@@ -11,7 +14,7 @@ function RecordedVids() {
   useEffect(() => {
     axios
       .get(
-        `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails%2Cstatus&playlistId=PLLCdGWbcw9uwhUPaCmtQlHlMKyE6R7a1P&key=${REACT_APP_YOUTUBE_API_KEY}`
+        `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails%2Cstatus&playlistId=PLLCdGWbcw9uxOviv7U0SV33u1Jc5i5IRU&key=${REACT_APP_YOUTUBE_API_KEY}`
       )
       .then((res) => {
         const videoitems = res.data.items;
@@ -20,14 +23,16 @@ function RecordedVids() {
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <>
-      {loader ? (
-        <Loader />
+    <NavBar />
+    {loader ? (
+        <Loader/>
       ) : videoItems.length > 0 ? (
         <Marquee
-          direction="right"
-          speed={30}
+          direction="left"
+          speed={50}
           gradient
           gradientWidth={0}
           gradientColor={[31, 31, 31]}
@@ -45,16 +50,11 @@ function RecordedVids() {
                   videos.contentDetails.videoId;
               }}
             >
-              <div className="card" style={{ width: "18rem" }}>
-                <img
-                  src={videos.snippet.thumbnails.high.url}
-                  className="card-img-top"
-                  alt="..."
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{videos.snippet.title}</h5>
-                </div>
-              </div>
+                <PopUp
+                src={videos.snippet.thumbnails.high.url}
+                title={videos.snippet.title}
+              />
+           
             </button>
           ))}
         </Marquee>
@@ -64,5 +64,3 @@ function RecordedVids() {
     </>
   );
 }
-
-export default RecordedVids;
