@@ -4,11 +4,12 @@
 @import "./home.scss";
 @import "../css/live.scss";
 @import "../css/navbar.scss";
+@import "../css/youtubeembed.scss";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins";
+  font-family: "Montserrat";
 }
 
 h1,
@@ -18,7 +19,7 @@ h3 {
 }
 
 body {
-  color: rgb(255, 255, 255);
+  color: rgb(204, 0, 255);
 }
 
 .vh-25 {
