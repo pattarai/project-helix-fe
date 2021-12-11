@@ -1,14 +1,18 @@
-import React from 'react';
-import NavBar from '../components/NavBar';
+import NavBar from "../components/NavBar";
+import YoutubeEmbed from "../components/YoutubeEmbed";
+
 
 function LiveStream() {
   return (
-    <div>
-      <NavBar/>
-    </div>
-  )
+    <>
+      <NavBar />
+      <YoutubeEmbed embedId="l3njFKX9huU" />
+      <h5 className="text-center stream-text text-secondary">
+                  Live Stream is Down. Check out our recorded events!
+                </h5>
+      
+    </>
+  );
 }
 
-export default LiveStream
-
-
+export default LiveStream;
