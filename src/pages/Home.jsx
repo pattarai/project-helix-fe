@@ -18,12 +18,12 @@ export default function Home() {
       <section className="home-bg full-vh">
         <div className="landing-main">
           <div className="text-center">
-            <h1>Hey Welcome to pattarai's workshopHub!</h1>
-            <button className="btn btn-primary" onClick={logout}>
+            <h1 class="main">Hey Welcome to Helix!</h1>
+            <button class="btn btn-primary btn-md col-xs-2 margin-left" onClick={logout}>
               Logout
             </button>
             <button
-              className="btn btn-secondary"
+              className="btn btn-secondary btn-md col-xs-2 margin-left"
               onClick={() => {
                 history.push("/live");
               }}
@@ -32,7 +32,7 @@ export default function Home() {
               Live{" "}
             </button>
             <button
-              className="btn btn-danger"
+              className="btn btn-danger btn-md col-xs-2 margin-left"
               onClick={() => {
                 history.push("/record");
               }}
