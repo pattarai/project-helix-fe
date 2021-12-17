@@ -22,14 +22,17 @@ export default function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#">Go Live</Nav.Link>
-            <button
+            <div>
+            <div
               className="btn btn-danger btn-md col-xs-2 margin-left "
               onClick={() => {
                 history.push("/record");
               }}
             >
               Recent Broadcasts!
-            </button>
+            </div>
+           </div>
+    
             <div>
               <div className="btn btn-danger btn-md col-xs-2 margin-left" onClick={logout}>
               Log out
