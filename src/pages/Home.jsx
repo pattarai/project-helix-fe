@@ -1,6 +1,11 @@
 import firebase from "firebase/app";
 import { useHistory } from "react-router-dom";
 // import LiveStream from "./LiveStream";
+import helix_bg from "../assets/images/helix_bg.gif"
+
+
+
+
 
 export default function Home() {
   const history = useHistory();
@@ -31,16 +36,10 @@ export default function Home() {
               {" "}
               Live{" "}
             </button>
-            <button
-              className="btn btn-danger btn-md col-xs-2 margin-left"
-              onClick={() => {
-                history.push("/record");
-              }}
-            >
-              PRE
-            </button>
+            <div><img src={helix_bg} class="img-fluid" alt="loading..." /></div>
           </div>
         </div>
+    
       </section>
     </>
   );
