@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function Error404() {
-    return (
-        <div>
-            Oops! we couldn't fetch you the page!
-        </div>
-    )
+  return (
+      <div>
+      </div>
+    
+  );
 }
 
-export default Error404
+export default Error404;

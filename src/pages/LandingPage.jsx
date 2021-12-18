@@ -3,6 +3,7 @@ import "firebase/auth";
 import "../firebase";
 import Img from "../assets/images/pic1.png";
 import Logo from "../assets/images/Pattarai_logo.svg";
+import Helix from "../assets/images/helix_logo.svg";
 
 import { useHistory } from "react-router-dom";
 
@@ -33,6 +34,7 @@ export default function LandingPage() {
             <div className="text-start">
               <img src={Logo} height="200" width="auto" alt="" />
               <p className="landing-text">P A T T A R A I' S</p>
+              <img src={Helix} alt="" />
               <h1 className="">HELIX</h1>
               <h3>Let's grow to together</h3>
               <button className="btn btn-danger" onClick={signInWithGoogle}>
