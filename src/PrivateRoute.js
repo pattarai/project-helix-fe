@@ -18,7 +18,7 @@ export default function PrivateRoute(props) {
       }
     });
   }, []);
-  
+
   return (
     <>
       {loading ? (

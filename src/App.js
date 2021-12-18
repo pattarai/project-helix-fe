@@ -13,7 +13,6 @@ import PrivateRoute from "./PrivateRoute";
 import RecordedVids from "./pages/RecordedVids";
 import YoutubeEmbed from "./components/YoutubeEmbed";
 
-
 export default function App() {
   return (
     <Router>
@@ -21,9 +20,9 @@ export default function App() {
         <Route exact path="/" component={LandingPage} />
         <PrivateRoute exact path="/home" component={Home} />
         <Route exact path="/live" component={LiveStream} />
-       <Route exact path="/404" component={Error404} />
-       <Route exact path="/record" component={RecordedVids} />
-       <Route exact path="/youtubeembed" component={YoutubeEmbed} />
+        <Route exact path="/404" component={Error404} />
+        <Route exact path="/record" component={RecordedVids} />
+        <Route exact path="/youtubeembed" component={YoutubeEmbed} />
         <Redirect to="/404" />
       </Switch>
     </Router>
