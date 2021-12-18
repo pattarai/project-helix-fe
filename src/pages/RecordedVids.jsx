@@ -5,7 +5,6 @@ import PopUp from "../components/PopUpCards";
 import NavBar from "../components/NavBar";
 import Loader from "../components/Loader";
 
-
 export default function RecordedVids() {
   const [loader, setLoader] = useState(true);
   const { REACT_APP_YOUTUBE_API_KEY } = process.env;
@@ -26,9 +25,9 @@ export default function RecordedVids() {
 
   return (
     <>
-    <NavBar />
-    {loader ? (
-        <Loader/>
+      <NavBar />
+      {loader ? (
+        <Loader />
       ) : videoItems.length > 0 ? (
         <Marquee
           direction="left"
@@ -50,11 +49,10 @@ export default function RecordedVids() {
                   videos.contentDetails.videoId;
               }}
             >
-                <PopUp
+              <PopUp
                 src={videos.snippet.thumbnails.high.url}
                 title={videos.snippet.title}
               />
-           
             </button>
           ))}
         </Marquee>

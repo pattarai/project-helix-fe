@@ -1,4 +1,3 @@
-
 import { Navbar, Nav } from "react-bootstrap";
 import firebase from "firebase/app";
 import { useHistory } from "react-router-dom";
@@ -23,20 +22,23 @@ export default function NavBar() {
           <Nav className="ms-auto">
             <Nav.Link href="#">Go Live</Nav.Link>
             <div>
-            <div
-              className="btn btn-danger btn-md col-xs-2 margin-left "
-              onClick={() => {
-                history.push("/record");
-              }}
-            >
-              Recent Broadcasts!
+              <div
+                className="btn btn-danger btn-md col-xs-2 margin-left "
+                onClick={() => {
+                  history.push("/record");
+                }}
+              >
+                Recent Broadcasts!
+              </div>
             </div>
-           </div>
-    
+
             <div>
-              <div className="btn btn-danger btn-md col-xs-2 margin-left" onClick={logout}>
-              Log out
-            </div>
+              <div
+                className="btn btn-danger btn-md col-xs-2 margin-left"
+                onClick={logout}
+              >
+                Log out
+              </div>
             </div>
           </Nav>
         </Navbar.Collapse>
