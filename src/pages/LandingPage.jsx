@@ -27,28 +27,24 @@ export default function LandingPage() {
   }
   return (
     <>
-      <section className="landing-bg full-vh">
-        <div className="landing-main d-md-flex justify-content-between p-5">
-          <div className="">
-            <div className="text-start">
-              <img src={Logo} height="200" width="auto" alt="" />
-              <p className="landing-text">P A T T A R A I' S</p>
-              <h1 className="">HELIX</h1>
-              <h3>Let's grow to together</h3>
-              <button className="btn btn-danger" onClick={signInWithGoogle}>
-                Login
-              </button>
-            </div>
-          </div>
-
-          <img
-            className="img-fluid"
-            src={Img}
-            height="425"
-            width="auto"
-            alt=""
-          />
+      <section className="vh-100 d-flex flex-row justify-content-evenly align-items-center">
+        <div className="text-center">
+          <img src={Logo} height="200" width="auto" alt="" className="mb-3" />
+          <p className="land-logo">P A T T A R A I' S</p>
+          <h1 className="display-1 fw-normal">HELIX</h1>
+          <h3 className="display-5">Let's grow to together</h3>
+          <button className="btn btn-danger" onClick={signInWithGoogle}>
+            Login
+          </button>
         </div>
+
+        {/* <img
+          className="img-fluid d-md-block d-none"
+          src={Img}
+          height="425"
+          width="auto"
+          alt=""
+        /> */}
       </section>
     </>
   );
