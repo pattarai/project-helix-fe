@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "../firebase";
-import Img from "../assets/images/pic1.png";
+// import Img from "../assets/images/pic1.png";
 import Logo from "../assets/images/Pattarai_logo.svg";
 
 import { useHistory } from "react-router-dom";
