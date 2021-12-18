@@ -32,8 +32,8 @@ export default function LandingPage() {
         <div className="text-center">
           <img src={Logo} height="200" width="auto" alt="" className="mb-3" />
           <p className="land-logo">P A T T A R A I' S</p>
-          <img src={Helix} alt="" height="100"/>
-          <h1 className="display-1 fw-normal">HELIX</h1>
+          <img src={Helix} alt="" height="100" />
+          <h1 className="display-1 logo fw-normal">HELIX</h1>
           <h3 className="display-5">Let's grow to together</h3>
           <button className="btn btn-danger" onClick={signInWithGoogle}>
             Login
