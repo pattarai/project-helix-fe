@@ -5,6 +5,7 @@ import "../firebase";
 import Logo from "../assets/images/Pattarai_logo.svg";
 import Helix from "../assets/images/helix_logo.svg";
 
+
 import { useHistory } from "react-router-dom";
 
 export default function LandingPage() {
@@ -30,13 +31,16 @@ export default function LandingPage() {
     <>
       <section className="vh-100 d-flex flex-row justify-content-evenly align-items-center">
         <div className="text-center">
-          <img src={Logo} height="200" width="auto" alt="" className="mb-3" />
+          <img src={Logo} height="200" width="auto" alt="" className="mb-3 fade-in-image" />
+          {/* <img src={Clock} height="100" width="auto" class="fade-in-image" alt="" /> */}
           <p className="land-logo">P A T T A R A I' S</p>
-          <img className="land-title img-fluid" src={Helix} alt="" />
+          <img className="land-title img-fluid fade-in-image" src={Helix} alt="" />
           <h3 className="display-5">Let's grow to together</h3>
-          <button className="btn btn-danger" onClick={signInWithGoogle}>
+       
+       <button className="btn btn-danger grad" onClick={signInWithGoogle}>
             Login
           </button>
+       
         </div>
 
         {/* <img
