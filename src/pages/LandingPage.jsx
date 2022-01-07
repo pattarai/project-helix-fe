@@ -3,7 +3,7 @@ import "firebase/auth";
 import "../firebase";
 // import Img from "../assets/images/pic1.png";
 import Logo from "../assets/images/Pattarai_logo.svg";
-import Helix from "../assets/images/helix_logo.svg";
+import Helix from "../assets/images/helix_logo (1).svg";
 
 
 import { useHistory } from "react-router-dom";
@@ -38,7 +38,7 @@ export default function LandingPage() {
           <h3 className="display-5">Let's grow to together</h3>
        
        <button className="btn btn-danger grad" onClick={signInWithGoogle}>
-            Login
+            SignIn
           </button>
        
         </div>
