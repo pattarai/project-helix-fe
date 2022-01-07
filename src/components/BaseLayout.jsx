@@ -37,7 +37,7 @@ export default function BaseLayout(props) {
 
         <section className="d-flex justify-content-center align-items-center mt-3">
           <div
-            className="card"
+            className="card main-bg"
             style={{
               minHeight: "80vh",
               width: "90%",
