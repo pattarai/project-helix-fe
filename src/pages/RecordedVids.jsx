@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Marquee from "react-fast-marquee";
 import PopUp from "../components/PopUpCards";
-import NavBar from "../components/NavBar";
 import Loader from "../components/Loader";
+import BaseLayout from "../components/BaseLayout";
 
 export default function RecordedVids() {
   const [loader, setLoader] = useState(true);
@@ -25,40 +25,41 @@ export default function RecordedVids() {
 
   return (
     <>
-      <NavBar />
-      {loader ? (
-        <Loader />
-      ) : videoItems.length > 0 ? (
-        <Marquee
-          direction="left"
-          speed={50}
-          gradient
-          gradientWidth={0}
-          gradientColor={[31, 31, 31]}
-        >
-          {videoItems.map((videos, id) => (
-            <button
-              key={id}
-              onClick={() => {
-                window.scrollTo(0, 0);
-                var livestream = document.getElementById("youtubeLive");
-                livestream.style.display = "block";
-                document.getElementById("no-stream").style.display = "none";
-                livestream.src =
-                  "https://www.youtube.com/embed/" +
-                  videos.contentDetails.videoId;
-              }}
-            >
-              <PopUp
-                src={videos.snippet.thumbnails.high.url}
-                title={videos.snippet.title}
-              />
-            </button>
-          ))}
-        </Marquee>
-      ) : (
-        <h1>No Data</h1>
-      )}
+      <BaseLayout>
+        {loader ? (
+          <Loader />
+        ) : videoItems.length > 0 ? (
+          <Marquee
+            direction="left"
+            speed={50}
+            gradient
+            gradientWidth={0}
+            gradientColor={[31, 31, 31]}
+          >
+            {videoItems.map((videos, id) => (
+              <button
+                key={id}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  var livestream = document.getElementById("youtubeLive");
+                  livestream.style.display = "block";
+                  document.getElementById("no-stream").style.display = "none";
+                  livestream.src =
+                    "https://www.youtube.com/embed/" +
+                    videos.contentDetails.videoId;
+                }}
+              >
+                <PopUp
+                  src={videos.snippet.thumbnails.high.url}
+                  title={videos.snippet.title}
+                />
+              </button>
+            ))}
+          </Marquee>
+        ) : (
+          <h1>No Data</h1>
+        )}
+      </BaseLayout>
     </>
   );
 }
