@@ -1,64 +1,12 @@
 // @import "./landingpage.scss";
-// @import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap";
 // @import "../fonts/fonts.css";
-// @import "./home.scss";
-// @import "../css/live.scss";
-// @import "../css/navbar.scss";
-// @import "../css/youtubeembed.scss";
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-//   font-family: "Montserrat";
-// }
+@import "./home.scss";
+@import "../css/live.scss";
+@import "../css/navbar.scss";
+@import "../css/youtubeembed.scss";
 
-// h1,
-// h2,
-// h3 {
-//   font-family: "Montserrat";
-// }
-
-// body {
-//   color: rgb(244, 240, 245);
-//   background-color: #032940;
-// }
-
-// .vh-25 {
-//   height: 25vh;
-// }
-// .vh-50 {
-//   height: 50vh;
-// }
-// .vh-75 {
-//   height: 75vh;
-// }
-// .vh-100 {
-//   height: 100vh;
-// }
-
-// @media (min-width: 767px) {
-//   .w-md-100 {
-//     width: 100% !important;
-//   }
-//   .w-md-75 {
-//     width: 75% !important;
-//   }
-//   .w-md-50 {
-//     width: 50% !important;
-//   }
-
-//   .vh-md-50 {
-//     height: 50vh !important;
-//   }
-//   .vh-md-75 {
-//     height: 75vh !important;
-//   }
-//   .vh-md-100 {
-//     height: 100vh !important;
-//   }
-// }
-
-@import "bootstrap/dist/css/bootstrap.min.css";
+// @import "bootstrap/dist/css/bootstrap.min.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
@@ -119,6 +67,14 @@ a {
 
 .main-bg {
   background-color: var(--main-color);
+}
+
+.main-frame {
+  z-index: 100;
+}
+
+.nice {
+  display: none;
 }
 
 .customButton {
