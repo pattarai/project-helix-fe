@@ -1,12 +1,13 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "../firebase";
-// import Img from "../assets/images/pic1.png";
-import Logo from "../assets/images/Pattarai_logo.svg";
-import Helix from "../assets/images/helix_logo (1).svg";
-
-
+import Button from "@material-ui/core/Button";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import FadeIn from "../animations/FadeIn";
+import Particles from "../animations/Particles";
+import { checkTheme } from "./theme";
+import Toggle from "../components/DarkTheme";
 
 export default function LandingPage() {
   const history = useHistory();
@@ -24,33 +25,33 @@ export default function LandingPage() {
       .signInWithPopup(provider)
       .then((result) => {
         /** @type {firebase.auth.OAuthCredential} */
-      })
-      .catch((error) => {});
+      });
   }
+
+  useEffect(() => {
+    checkTheme();
+  }, []);
+
   return (
     <>
-      <section className="vh-100 d-flex flex-row justify-content-evenly align-items-center">
-        <div className="text-center">
-          <img src={Logo} height="200" width="auto" alt="" className="mb-3 fade-in-image" />
-          {/* <img src={Clock} height="100" width="auto" class="fade-in-image" alt="" /> */}
-          <p className="land-logo">P A T T A R A I' S</p>
-          <img className="land-title img-fluid fade-in-image" src={Helix} alt="" />
-          <h3 className="display-5">Let's grow to together</h3>
-       
-       <button className="btn btn-danger grad" onClick={signInWithGoogle}>
-            SignIn
-          </button>
-       
+      <FadeIn>
+        <p className="p-3">
+          <Toggle />
+        </p>
+        <div
+          className="d-flex align-items-center justify-content-center main-bg w-100"
+          style={{ height: "80vh" }}
+        >
+          <div className="text-center">
+            <p className="text-pattarai">PATTARAI</p>
+            <p className="title-word">Helix</p>
+            <Button class="customButton" onClick={signInWithGoogle}>
+              SIGN IN
+            </Button>
+          </div>
         </div>
-
-        {/* <img
-          className="img-fluid d-md-block d-none"
-          src={Img}
-          height="425"
-          width="auto"
-          alt=""
-        /> */}
-      </section>
+      </FadeIn>
+      <Particles />
     </>
   );
 }
