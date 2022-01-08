@@ -43,8 +43,8 @@ export default function LandingPage() {
           style={{ height: "80vh" }}
         >
           <div className="text-center">
-            <p className="text-pattarai">PATTARAI</p>
-            <p className="title-word">Helix</p>
+            <p className="text-pattarai text-center">PATTARAI'S</p>
+            <p className="title-word text-center">H E L I X</p>
             <Button class="customButton" onClick={signInWithGoogle}>
               SIGN IN
             </Button>
