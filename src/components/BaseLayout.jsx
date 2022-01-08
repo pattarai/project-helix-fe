@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import Particles from "../animations/Particles";
 import Toggle from "../components/DarkTheme";
 
+
 export default function BaseLayout(props) {
   const history = useHistory();
 
@@ -21,18 +22,29 @@ export default function BaseLayout(props) {
   return (
     <>
       <FadeIn>
-        <section className="d-flex align-items-center justify-content-between mx-4 my-3">
-          <Toggle />
-          <a
+      
+        <section className="d-flex align-items-center  mx-4 my-3">
+         <div className="me-auto">
+         <Toggle />
+          
+         </div>
+          {/* <a
             href="https://www.pattarai.in/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img className="img-animation" width="70" height="70" alt="" />
-          </a>
-          <Button class="customButton" onClick={logout}>
+          </a> */}
+          <div class="me-3"><Button class="customButton"   onClick={() => {
+                  history.push("/record");
+                }}>
+            RECENTS
+          </Button></div>
+
+       <div>   <Button class="customButton " onClick={logout}>
             LOGOUT
-          </Button>
+          </Button></div>
+          
         </section>
 
         <section className="d-flex justify-content-center align-items-center mt-3">
