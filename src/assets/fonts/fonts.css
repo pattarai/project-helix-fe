@@ -103,6 +103,14 @@
 }
 
 @font-face {
+  font-family: "Incompleeta";
+  src: url("../fonts/IncompleetaRegular.woff") format("woff");
+  font-weight: 500;
+  font-style:normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Poppins";
   src: url("Poppins-LightItalic.woff") format("woff");
   font-weight: 300;
