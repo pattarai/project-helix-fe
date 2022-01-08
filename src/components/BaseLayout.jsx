@@ -4,8 +4,8 @@ import firebase from "firebase/app";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Particles from "../animations/Particles";
-import Toggle from "../components/DarkTheme";
-
+// import Toggle from "../components/DarkTheme";
+import { Navbar, Nav } from "react-bootstrap";
 
 export default function BaseLayout(props) {
   const history = useHistory();
@@ -22,31 +22,30 @@ export default function BaseLayout(props) {
   return (
     <>
       <FadeIn>
-      
-        <section className="d-flex align-items-center  mx-4 my-3">
-         <div className="me-auto">
-         <Toggle />
-          
-         </div>
-          {/* <a
-            href="https://www.pattarai.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className="img-animation" width="70" height="70" alt="" />
-          </a> */}
-          <div class="me-3"><Button class="customButton"   onClick={() => {
-                  history.push("/record");
-                }}>
-            RECENTS
-          </Button></div>
+        <Navbar expand="lg">
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav class="me-auto">
+              <div class="me-3">
+                <Button
+                  class="customButton"
+                  onClick={() => {
+                    history.push("/live");
+                  }}
+                >
+                  LIVE NOW
+                </Button>
+              </div>
 
-       <div>   <Button class="customButton " onClick={logout}>
-            LOGOUT
-          </Button></div>
-          
-        </section>
-
+              <div>
+                {" "}
+                <Button class="customButton " onClick={logout}>
+                  LOGOUT
+                </Button>
+              </div>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
         <section className="d-flex justify-content-center align-items-center mt-3">
           <div
             className="card main-bg"
