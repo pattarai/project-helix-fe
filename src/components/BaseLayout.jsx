@@ -4,7 +4,7 @@ import firebase from "firebase/app";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Particles from "../animations/Particles";
-// import Toggle from "../components/DarkTheme";
+import Toggle from "../components/DarkTheme";
 import { Navbar, Nav } from "react-bootstrap";
 
 export default function BaseLayout(props) {
@@ -22,11 +22,12 @@ export default function BaseLayout(props) {
   return (
     <>
       <FadeIn>
-        <Navbar expand="lg">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav class="me-auto">
-              <div class="me-3">
+      <Navbar expand="lg" className="mx-2">
+       <Toggle />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+          <div class="me-3">
                 <Button
                   class="customButton"
                   onClick={() => {
@@ -43,9 +44,10 @@ export default function BaseLayout(props) {
                   LOGOUT
                 </Button>
               </div>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
         <section className="d-flex justify-content-center align-items-center mt-3">
           <div
             className="card main-bg"
