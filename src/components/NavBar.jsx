@@ -1,6 +1,9 @@
 import { Navbar, Nav } from "react-bootstrap";
 import firebase from "firebase/app";
 import { useHistory } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import Toggle from "../components/DarkTheme";
+
 
 export default function NavBar() {
   const history = useHistory();
@@ -15,31 +18,29 @@ export default function NavBar() {
   }
   return (
     <>
-      <Navbar bg="light" expand="lg" className="mx-2">
-        <Navbar.Brand href="#home">HELIX</Navbar.Brand>
+       <Navbar expand="lg" className="mx-2">
+       <Toggle />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#">Go Live</Nav.Link>
-            <div>
-              <div
-                className="btn btn-danger btn-md col-xs-2 margin-left "
-                onClick={() => {
-                  history.push("/record");
-                }}
-              >
-                Recent Broadcasts!
+          <div className=" col-xs-2 margin-left ">
+                <Button
+                  class="customButton"
+                  onClick={() => {
+                    history.push("/live");
+                  }}
+                >
+                  LIVE NOW
+                </Button>
               </div>
-            </div>
 
-            <div>
-              <div
-                className="btn btn-danger btn-md col-xs-2 margin-left"
-                onClick={logout}
-              >
-                Log out
+              <div className="col-xs-2 margin-left">
+                {" "}
+                <Button class="customButton " onClick={logout}>
+                  LOGOUT
+                </Button>
               </div>
-            </div>
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>
