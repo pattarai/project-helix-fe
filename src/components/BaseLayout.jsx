@@ -1,29 +1,42 @@
-// import Button from "@material-ui/core/Button";
+ import Button from "@material-ui/core/Button";
 import FadeIn from "../animations/FadeIn";
-// import firebase from "firebase/app";
+ import firebase from "firebase/app";
 import React from "react";
-// import { useHistory } from "react-router-dom";
+ import { useHistory } from "react-router-dom";
 import Particles from "../animations/Particles";
 import NavBar from "../components/NavBar";
 // import Toggle from "../components/DarkTheme";
 // import { Navbar, Nav } from "react-bootstrap";
 
 export default function BaseLayout(props) {
-  // const history = useHistory();
+   const history = useHistory();
 
-  // function logout() {
-  //   firebase
-  //     .auth()
-  //     .signOut()
-  //     .then(() => {
-  //       history.push("/");
-  //     });
-  // }
+   function logout() {
+     firebase
+       .auth()
+       .signOut()
+       .then(() => {
+         history.push("/");
+       });
+   }
 
   return (
     <>
       <FadeIn>
-      <NavBar />
+      <section className="d-flex justify-content-end mx-4 my-3">
+          <Button
+            class="customButton"
+            onClick={() => {
+              history.push("/live");
+            }}
+          >
+            LIVE NOW
+          </Button>
+
+          <Button class="customButton mx-2 "  onClick={logout}>
+            LOGOUT
+          </Button>
+        </section>
         <section className="d-flex justify-content-center align-items-center mt-3">
           <div
             className="card main-bg"

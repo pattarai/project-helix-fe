@@ -23,7 +23,8 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-          <div className="margin-left">
+         <div>
+         <div className="margin-left">
                 <Button
                   class="customButton"
                   onClick={() => {
@@ -32,12 +33,12 @@ export default function NavBar() {
                 >
                   LIVE NOW
                 </Button>
-            
-                {" "}
+                      
                 <Button class="customButton " onClick={logout}>
                   LOGOUT
                 </Button>
               </div>
+         </div>
 
           </Nav>
         </Navbar.Collapse>

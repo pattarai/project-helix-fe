@@ -25,10 +25,11 @@ export default function Home() {
 
   return (
     <>
-      <BaseLayout>
         {loader ? (
           <Loader />
         ) : videoItems.length > 0 ? (
+         
+      <BaseLayout>
           <Marquee
             direction="left"
             speed={50}
@@ -56,10 +57,11 @@ export default function Home() {
               </button>
             ))}
           </Marquee>
+          </BaseLayout>
         ) : (
           <h1>No Data</h1>
         )}
-      </BaseLayout>
+      
     </>
   );
 }
