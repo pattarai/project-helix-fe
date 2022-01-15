@@ -4,9 +4,10 @@ import FadeIn from "../animations/FadeIn";
 import React from "react";
  import { useHistory } from "react-router-dom";
 import Particles from "../animations/Particles";
-import NavBar from "../components/NavBar";
-// import Toggle from "../components/DarkTheme";
+// import NavBar from "../components/NavBar";
+import Toggle from "../components/DarkTheme";
 // import { Navbar, Nav } from "react-bootstrap";
+import Footer from "./Footer";
 
 export default function BaseLayout(props) {
    const history = useHistory();
@@ -23,7 +24,8 @@ export default function BaseLayout(props) {
   return (
     <>
       <FadeIn>
-      <section className="d-flex justify-content-end mx-4 my-3">
+      <section className="d-flex align-items-center justify-content-between mx-4 my-3">
+      <Toggle/>
           <Button
             class="customButton"
             onClick={() => {
@@ -33,7 +35,7 @@ export default function BaseLayout(props) {
             LIVE NOW
           </Button>
 
-          <Button class="customButton mx-2 "  onClick={logout}>
+          <Button class="customButton "  onClick={logout}>
             LOGOUT
           </Button>
         </section>
@@ -50,6 +52,7 @@ export default function BaseLayout(props) {
             <section className="container-fluid">{props.children}</section>
           </div>
         </section>
+        <Footer />
       </FadeIn>
       <Particles />
     </>
