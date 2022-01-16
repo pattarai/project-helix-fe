@@ -6,6 +6,12 @@ import { useHistory } from "react-router-dom";
 import Particles from "../animations/Particles";
 import Toggle from "../components/DarkTheme";
 import Footer from "./Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faPodcast,
+  faSignOutAlt
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function BaseLayout(props) {
   const history = useHistory();
@@ -22,19 +28,29 @@ export default function BaseLayout(props) {
   return (
     <>
       <FadeIn>
-        <section className="d-flex align-items-center justify-content-between mx-4 my-3">
-          <Toggle />
+        <section className="d-flex align-items-center mx-4 my-3 justify-content-between">
+            <Toggle />
+     
+
+          <div class="">
+          <Button class="customButton me-4"  onClick={() => {
+              history.push("/home");
+            }} >
+              <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faHome} />
+           </Button>
+
           <Button
-            class="customButton"
+            class="customButton me-4"
             onClick={() => {
               history.push("/live");
             }}
           >
-            LIVE NOW
+            <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faPodcast} />
           </Button>
-          <Button class="customButton " onClick={logout}>
-            LOGOUT
+          <Button class="customButton me-4" onClick={logout}>
+          <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faSignOutAlt} />
           </Button>
+          </div>
         </section>
         <section className="d-flex justify-content-center align-items-center mt-3">
           <div
