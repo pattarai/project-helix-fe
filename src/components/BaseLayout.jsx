@@ -1,31 +1,29 @@
- import Button from "@material-ui/core/Button";
+import Button from "@material-ui/core/Button";
 import FadeIn from "../animations/FadeIn";
- import firebase from "firebase/app";
+import firebase from "firebase/app";
 import React from "react";
- import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Particles from "../animations/Particles";
-// import NavBar from "../components/NavBar";
 import Toggle from "../components/DarkTheme";
-// import { Navbar, Nav } from "react-bootstrap";
 import Footer from "./Footer";
 
 export default function BaseLayout(props) {
-   const history = useHistory();
+  const history = useHistory();
 
-   function logout() {
-     firebase
-       .auth()
-       .signOut()
-       .then(() => {
-         history.push("/");
-       });
-   }
+  function logout() {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        history.push("/");
+      });
+  }
 
   return (
     <>
       <FadeIn>
-      <section className="d-flex align-items-center justify-content-between mx-4 my-3">
-      <Toggle/>
+        <section className="d-flex align-items-center justify-content-between mx-4 my-3">
+          <Toggle />
           <Button
             class="customButton"
             onClick={() => {
@@ -34,8 +32,7 @@ export default function BaseLayout(props) {
           >
             LIVE NOW
           </Button>
-
-          <Button class="customButton "  onClick={logout}>
+          <Button class="customButton " onClick={logout}>
             LOGOUT
           </Button>
         </section>
