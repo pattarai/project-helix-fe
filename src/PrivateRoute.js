@@ -22,7 +22,7 @@ export default function PrivateRoute(props) {
   return (
     <>
       {loading ? (
-        <h1>Loading</h1>
+        null
       ) : user ? (
         <Component />
       ) : (
