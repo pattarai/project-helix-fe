@@ -28,42 +28,40 @@ export default function BaseLayout(props) {
   return (
     <>
       <FadeIn>
-        <section className="d-flex align-items-center mx-4 my-3 justify-content-between">
+        <section className="d-flex  align-items-center mx-4 my-3 justify-content-between">
             <Toggle />
      
 
-          <div class="">
-          <Button class="customButton me-4"  onClick={() => {
+          <div class="d-flex flex-row">
+          <Button class="customButton d-flex  justify-content-between align-items-center me-4"  onClick={() => {
               history.push("/home");
             }} >
-              <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faHome} /> HOME
+              <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faHome} /> <span className="d-md-block d-none ms-2">
+               HOME
+               </span>
            </Button>
 
           <Button
-            class="customButton me-4"
+            class="customButton d-flex  justify-content-between align-items-center me-4"
             onClick={() => {
               history.push("/live");
             }}
           >
-            <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faPodcast} /> LIVE NOW
+            <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faPodcast} /> <span className="d-md-block d-none ms-2">
+              LIVE NOW
+              </span>
           </Button>
-          <Button class="customButton me-4" onClick={logout}>
-          <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faSignOutAlt} /> SIGN OUT
+          <Button class="customButton d-flex  justify-content-between align-items-center me-4" onClick={logout}>
+          <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faSignOutAlt} /> <span className="d-md-block d-none ms-2">
+             SIGN OUT
+             </span>
           </Button>
           </div>
         </section>
         <section className="d-flex justify-content-center align-items-center mt-3">
-          <div
-            className="card main-bg"
-            style={{
-              minHeight: "80vh",
-              width: "90%",
-              boxShadow:
-                "0 8px 16px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.16)",
-            }}
-          >
+         
             <section className="container-fluid">{props.children}</section>
-          </div>
+         
         </section>
         <Footer />
       </FadeIn>
