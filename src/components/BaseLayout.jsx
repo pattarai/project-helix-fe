@@ -36,7 +36,7 @@ export default function BaseLayout(props) {
           <Button class="customButton me-4"  onClick={() => {
               history.push("/home");
             }} >
-              <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faHome} />
+              <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faHome} /> HOME
            </Button>
 
           <Button
@@ -45,10 +45,10 @@ export default function BaseLayout(props) {
               history.push("/live");
             }}
           >
-            <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faPodcast} />
+            <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faPodcast} /> LIVE NOW
           </Button>
           <Button class="customButton me-4" onClick={logout}>
-          <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faSignOutAlt} />
+          <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faSignOutAlt} /> SIGN OUT
           </Button>
           </div>
         </section>
