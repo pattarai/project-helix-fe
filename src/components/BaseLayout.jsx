@@ -1,56 +1,67 @@
- import Button from "@material-ui/core/Button";
+import Button from "@material-ui/core/Button";
 import FadeIn from "../animations/FadeIn";
- import firebase from "firebase/app";
+import firebase from "firebase/app";
 import React from "react";
- import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Particles from "../animations/Particles";
-// import NavBar from "../components/NavBar";
 import Toggle from "../components/DarkTheme";
-// import { Navbar, Nav } from "react-bootstrap";
 import Footer from "./Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faPodcast,
+  faSignOutAlt
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function BaseLayout(props) {
-   const history = useHistory();
+  const history = useHistory();
 
-   function logout() {
-     firebase
-       .auth()
-       .signOut()
-       .then(() => {
-         history.push("/");
-       });
-   }
+  function logout() {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        history.push("/");
+      });
+  }
 
   return (
     <>
       <FadeIn>
-      <section className="d-flex align-items-center justify-content-between mx-4 my-3">
-      <Toggle/>
+        <section className="d-flex  align-items-center mx-4 my-3 justify-content-between">
+            <Toggle />
+     
+
+          <div class="d-flex flex-row">
+          <Button class="customButton d-flex  justify-content-between align-items-center me-4"  onClick={() => {
+              history.push("/home");
+            }} >
+              <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faHome} /> <span className="d-md-block d-none ms-2">
+               HOME
+               </span>
+           </Button>
+
           <Button
-            class="customButton"
+            class="customButton d-flex  justify-content-between align-items-center me-4"
             onClick={() => {
               history.push("/live");
             }}
           >
-            LIVE NOW
+            <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faPodcast} /> <span className="d-md-block d-none ms-2">
+              LIVE NOW
+              </span>
           </Button>
-
-          <Button class="customButton "  onClick={logout}>
-            LOGOUT
+          <Button class="customButton d-flex  justify-content-between align-items-center me-4" onClick={logout}>
+          <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faSignOutAlt} /> <span className="d-md-block d-none ms-2">
+             SIGN OUT
+             </span>
           </Button>
+          </div>
         </section>
         <section className="d-flex justify-content-center align-items-center mt-3">
-          <div
-            className="card main-bg"
-            style={{
-              minHeight: "80vh",
-              width: "90%",
-              boxShadow:
-                "0 8px 16px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.16)",
-            }}
-          >
+         
             <section className="container-fluid">{props.children}</section>
-          </div>
+         
         </section>
         <Footer />
       </FadeIn>
