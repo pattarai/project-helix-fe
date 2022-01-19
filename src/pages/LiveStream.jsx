@@ -3,6 +3,7 @@ import NoLiveStream from "../assets/images/NoStream.png";
 import { ReactFlvPlayer } from "react-flv-player";
 import axios from "axios";
 import BaseLayout from "../components/BaseLayout";
+import Chat from "mr-chat-client";
 
 export default function Home() {
   const [display, setDisplay] = useState({ image: "", video: "none" });
@@ -62,12 +63,7 @@ export default function Home() {
               hasVideo={true}
             />
           </div>
-          <iframe
-            title="Titan Embed"
-            className="col-12 col-md-4 iframe-height"
-            src="https://titanembeds.com/embed/808401706337435709?css=31"
-            frameBorder="0"
-          ></iframe>
+          <Chat roomKey="123"/>
         </div>
       </BaseLayout>
     </>

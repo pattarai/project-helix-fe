@@ -33,12 +33,12 @@ export default function Home() {
       <BaseLayout>
         <div className="card-body d-md-flex align-items-center d-block">
               <div id="no-stream">
-                <img
+                {/* <img
                   className="img-fluid px-md-3"
                   src={NoLiveStream}
                   height={400}
                   alt=""
-                />
+                /> */}
                 <h5 className="text-center stream-text text-secondary">
                   Live Stream is Down. Check out our recorded events!
                 </h5>
