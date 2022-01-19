@@ -5,11 +5,11 @@ import { useState, useEffect } from "react";
 export default function Toggle() {
   const [btnImage, setBtnImage] = useState(() => {
     if (localStorage.getItem("theme") === "theme-dark") {
-      return "🌛";
+      return "H E L I X";
     } else if (localStorage.getItem("theme") === "theme-light") {
-      return "🌞";
+      return "H E L I X";
     } else {
-      return "🌞";
+      return "H E L I X";
     }
   });
 
@@ -20,16 +20,16 @@ export default function Toggle() {
   const handleOnClick = () => {
     if (localStorage.getItem("theme") === "theme-light") {
       setLocalTheme("theme-dark");
-      setBtnImage("🌛");
+      setBtnImage("H E L I X");
     } else {
       setLocalTheme("theme-light");
-      setBtnImage("🌞");
+      setBtnImage("H E L I X");
     }
   };
 
   return (
     <>
-      <Button class="themeButton" onClick={handleOnClick}>
+      <Button class="themeButton logoButton" onClick={handleOnClick}>
         {btnImage}
       </Button>
     </>
