@@ -10,8 +10,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap%27');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap%27");
 
 .theme-dark {
   --color-start: #833ab4;
@@ -23,6 +23,7 @@
   --button-bg-color: #100f10;
   --card-color: #1b1b1b;
   --theme-button-color: #1b1b1b;
+  --button-shadow: 1px 1px 5px #8f78f8;
 }
 
 .theme-light {
@@ -79,8 +80,6 @@ a {
   display: none;
 }
 
-
-
 .customButton {
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
@@ -105,9 +104,7 @@ a {
   color: var(--text-color);
   font-family: Montserrat;
   font-size: 2vw;
-   letter-spacing: 1.5vw;
- 
-
+  letter-spacing: 1.5vw;
 }
 
 @keyframes animate {
@@ -122,7 +119,7 @@ a {
   font-family: "Incompleeta";
   src: url("../fonts/IncompleetaRegular.woff") format("woff");
   font-weight: 500;
-  font-style:normal;
+  font-style: normal;
   font-display: swap;
 }
 .title-word {
@@ -141,8 +138,7 @@ a {
   background-position: -100%;
   animation: animate 2s infinite alternate-reverse;
   white-space: nowrap;
- margin-bottom: 2.5vw;
-
+  margin-bottom: 2.5vw;
 }
 
 .img-animation {
@@ -223,4 +219,3 @@ button {
     font-size: 2.5vw;
   }
 }
-
