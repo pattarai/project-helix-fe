@@ -1,6 +1,6 @@
 import { setLocalTheme } from "../pages/theme";
 import Button from "@material-ui/core/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Toggle() {
   const [btnImage, setBtnImage] = useState(() => {
@@ -12,6 +12,10 @@ export default function Toggle() {
       return "🌞";
     }
   });
+
+  useEffect(() => {
+    setLocalTheme("theme-light");
+  }, []);
 
   const handleOnClick = () => {
     if (localStorage.getItem("theme") === "theme-light") {
