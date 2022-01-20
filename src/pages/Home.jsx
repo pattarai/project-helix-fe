@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 import PopUp from "../components/PopUpCards";
 import Loader from "../components/Loader";
 import BaseLayout from "../components/BaseLayout";
-import NoLiveStream from "../assets/images/NoStream.png"
+// import NoLiveStream from "../assets/images/NoStream.png"
 
 export default function Home() {
   const [loader, setLoader] = useState(true);
@@ -49,7 +49,7 @@ export default function Home() {
                 title="Youtube Live Stream"
                 className="col-12 col-md-8 px-md-3 pb-3 pb-md-0 iframe-height"
                 style={{ display: "none" }}
-                src={NoLiveStream}
+                // src={NoLiveStream}
                 frameBorder="0"
                 allowFullScreen
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
