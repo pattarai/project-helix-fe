@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import { useHistory } from "react-router-dom";
-import Button from "@material-ui/core/Button";
+import Button from "@mui/material/Button";
 import Toggle from "../components/DarkTheme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

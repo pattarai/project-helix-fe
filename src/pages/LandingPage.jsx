@@ -1,9 +1,9 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "../firebase";
-import Button from "@material-ui/core/Button";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import Button from "@mui/material/Button";
 import FadeIn from "../animations/FadeIn";
 import Particles from "../animations/Particles";
 import { checkTheme } from "./theme";

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { setLocalTheme } from "../pages/theme";
-import Button from "@material-ui/core/Button";
+import Button from "@mui/material/Button";
 
 export default function Toggle() {
   const [btnImage, setBtnImage] = useState(() => {
