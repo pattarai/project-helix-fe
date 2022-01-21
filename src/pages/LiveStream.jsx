@@ -4,9 +4,14 @@ import { ReactFlvPlayer } from "react-flv-player";
 import axios from "axios";
 import BaseLayout from "../components/BaseLayout";
 import Chat from "mr-chat-client";
+import firebase from "firebase";
+import { user } from "./Home";
 
 export default function Home() {
   const [display, setDisplay] = useState({ image: "", video: "none" });
+
+  const username = localStorage.getItem("username");
+  console.log(username);
 
   let { REACT_APP_STREAM_KEY } = process.env;
 
@@ -66,7 +71,7 @@ export default function Home() {
               hasVideo={true}
             />
           </div>
-          <Chat roomKey="123" />
+          <Chat userName={username} roomKey="123" />
         </div>
       </BaseLayout>
     </>

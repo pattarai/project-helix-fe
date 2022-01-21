@@ -4,12 +4,24 @@ import Marquee from "react-fast-marquee";
 import PopUp from "../components/PopUpCards";
 import Loader from "../components/Loader";
 import BaseLayout from "../components/BaseLayout";
+import firebase from "firebase";
 // import NoLiveStream from "../assets/images/NoStream.png"
+//
+// const user = firebase.auth().currentUser;
+//
+// const username=user.displayName;
+//
+// localStorage.setItem("username",username);
+// console.log(localStorage.getItem("username"));
+
+
 
 export default function Home() {
   const [loader, setLoader] = useState(true);
   const { REACT_APP_YOUTUBE_API_KEY } = process.env;
   const [videoItems, setVideoItems] = useState([]);
+
+
 
   useEffect(() => {
     axios
