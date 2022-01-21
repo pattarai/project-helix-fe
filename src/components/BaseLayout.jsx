@@ -9,7 +9,7 @@ export default function BaseLayout(props) {
     <>
       <FadeIn>
         <NavBar />
-        <section className="container-fluid">{props.children}</section>
+        <section className="vh-100 container-fluid">{props.children}</section>
         <Footer />
       </FadeIn>
       <Particles />

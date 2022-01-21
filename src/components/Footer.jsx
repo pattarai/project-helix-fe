@@ -16,18 +16,18 @@ export default function Footer() {
   const currentYear = date.getFullYear();
   return (
     <>
-      <section style={{ marginTop: "50px" }}>
+      <section>
         <div className="px-5">
           <div className="bg-secondary" style={{ height: "1px" }}></div>
         </div>
-        <div className="text-center text-muted d-flex flex-md-row flex-column justify-content-between align-items-center mx-md-3 my-3 ml-md-4 ml-lg-0">
+        <div className="text-center text-muted d-flex flex-column flex-md-row  justify-content-between align-items-center my-3 mx-md-3  ml-md-4 ml-lg-0">
           <Link
             to={{ pathname: "https://www.pattarai.in/" }}
             target="_blank"
             className="text-center"
           >
             <img
-              className="my-sm-0 my-2"
+              className="my-md-2"
               height="45px"
               src={logo}
               alt="Licet Pattarai"
