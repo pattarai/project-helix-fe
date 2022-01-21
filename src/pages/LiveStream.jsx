@@ -1,44 +1,36 @@
 import { useEffect, useState } from "react";
 import NoLiveStream from "../assets/images/NoStream.png";
 import { ReactFlvPlayer } from "react-flv-player";
+import Chat from "mr-chat-client";
 import axios from "axios";
 import BaseLayout from "../components/BaseLayout";
-import Chat from "mr-chat-client";
-import firebase from "firebase";
-import { user } from "./Home";
 
 export default function Home() {
-  const [display, setDisplay] = useState({ image: "", video: "none" });
-
-  const username = localStorage.getItem("username");
-  console.log(username);
-
   let { REACT_APP_STREAM_KEY } = process.env;
+  const [display, setDisplay] = useState({ image: "", video: "none" });
+  const username = localStorage.getItem("username");
 
-  let streams = async () => {
-    let stream = await axios
+  function streams() {
+    axios
       .get("http://vpn.opencloud.pattarai.in:8000/api/streams", {
         auth: {
           username: "admin",
           password: "admin",
         },
       })
+      .then((res) => {
+        let stream_publishers = res.data.live[REACT_APP_STREAM_KEY].publisher;
+        if (stream_publishers === null) {
+          setDisplay({ image: "", video: "none" });
+        } else {
+          setDisplay({ image: "none", video: "" });
+        }
+      })
       .catch((err) => {
         setDisplay({ image: "", video: "none" });
       });
+  }
 
-    try {
-      let stream_publishers = stream.data.live[REACT_APP_STREAM_KEY].publisher;
-      if (stream_publishers == null) {
-        await setDisplay({ image: "", video: "none" });
-      } else {
-        await setDisplay({ image: "none", video: "" });
-      }
-    } catch (err) {
-      setDisplay({ image: "", video: "none" });
-    }
-    // await console.log(stream_publishers);
-  };
   useEffect(() => {
     streams();
     // eslint-disable-next-line react-hooks/exhaustive-deps
