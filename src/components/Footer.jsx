@@ -16,16 +16,25 @@ export default function Footer() {
   const currentYear = date.getFullYear();
   return (
     <>
-      <section className="" style={{ marginTop: "100px" }}>
+      <section style={{ marginTop: "50px" }}>
         <div className="px-5">
           <div className="bg-secondary" style={{ height: "1px" }}></div>
         </div>
         <div className="text-center text-muted d-flex flex-md-row flex-column justify-content-between align-items-center mx-md-3 my-3 ml-md-4 ml-lg-0">
-          <Link to= {{ pathname : "https://www.pattarai.in/" }} target="_blank" className="text-center">
-            <img height="45px" src={logo} alt="Licet Pattarai"></img>
+          <Link
+            to={{ pathname: "https://www.pattarai.in/" }}
+            target="_blank"
+            className="text-center"
+          >
+            <img
+              className="my-sm-0 my-2"
+              height="45px"
+              src={logo}
+              alt="Licet Pattarai"
+            ></img>
           </Link>
           © {currentYear} · Pattarai · All rights reserved
-          <div className="h4 text-center">
+          <div className="h4 my-sm-0 my-2 text-center">
             <SocialIcons
               img={faLinkedin}
               src={"https://www.linkedin.com/company/licetpattarai"}
