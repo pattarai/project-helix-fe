@@ -2,9 +2,7 @@
 @import "~bootstrap/scss/bootstrap";
 // @import "../fonts/fonts.css";
 @import "./home.scss";
-@import "../css/live.scss";
-@import "../css/navbar.scss";
-@import "../css/youtubeembed.scss";
+@import "./landingpage.scss";
 
 // @import "bootstrap/dist/css/bootstrap.min.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
@@ -80,7 +78,9 @@ a {
   display: none;
 }
 
-
+.w-55{
+  width: 55%;
+}
 
 .customButton {
   background-color: var(--button-bg-color);
@@ -209,6 +209,10 @@ button {
   .iframe-height {
     height: 50vh;
   }
+  .no-stream{
+    height: auto;
+    width: 100%;
+  }
   .stream-text {
     font-size: 15px;
   }
@@ -229,3 +233,24 @@ button {
   }
 }
 
+.margin-left{
+  margin-left: 40px !important;
+}
+
+//youtube Embed css
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 70%;
+  width: 100%;
+  position: absolute;
+}

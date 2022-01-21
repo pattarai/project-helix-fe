@@ -14,6 +14,10 @@ export default function LandingPage() {
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+      console.log(user);
+      const username=user.displayName;
+      localStorage.setItem("username",username);
+
       history.push("/home");
     }
   });
