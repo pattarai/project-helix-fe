@@ -1,6 +1,5 @@
 import firebase from "firebase/app";
 import { useHistory } from "react-router-dom";
-import Button from "@mui/material/Button";
 import Toggle from "../components/DarkTheme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -26,29 +25,33 @@ export default function NavBar() {
         <Toggle />
 
         <div className="d-flex">
-          <Button
-            className="customButton"
+          <button
+            className="h-25 d-flex align-items-center button customButton"
             onClick={() => {
               history.push("/home");
             }}
           >
             <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faHome} />{" "}
             <span className="d-md-block d-none ms-2">HOME</span>
-          </Button>
+          </button>
 
-          <Button
-            className="customButton mx-4"
+          <button
+            className="h-25 d-flex align-items-center button customButton mx-4"
             onClick={() => {
               history.push("/live");
             }}
           >
             <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faPodcast} />{" "}
             <span className="d-md-block d-none ms-2">LIVE NOW</span>
-          </Button>
-          <Button className="customButton" onClick={logout}>
+          </button>
+
+          <button
+            className="h-25 d-flex align-items-center button customButton"
+            onClick={logout}
+          >
             <FontAwesomeIcon color="#0c4ec9" size="1x" icon={faSignOutAlt} />{" "}
             <span className="d-md-block d-none ms-2">SIGN OUT</span>
-          </Button>
+          </button>
         </div>
       </section>
     </>
