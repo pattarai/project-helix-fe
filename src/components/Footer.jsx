@@ -33,7 +33,9 @@ export default function Footer() {
               alt="Licet Pattarai"
             ></img>
           </Link>
-          © {currentYear} · Pattarai · All rights reserved
+          <p className="mb-0">
+            © {currentYear} · Pattarai · All rights reserved
+          </p>
           <div className="h4 my-sm-0 my-2 text-center">
             <SocialIcons
               img={faLinkedin}
