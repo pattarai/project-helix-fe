@@ -78,7 +78,9 @@ a {
   display: none;
 }
 
-
+.w-55{
+  width: 55%;
+}
 
 .customButton {
   background-color: var(--button-bg-color);
@@ -206,6 +208,10 @@ button {
 @media (max-width: 767px) {
   .iframe-height {
     height: 50vh;
+  }
+  .no-stream{
+    height: auto;
+    width: 100%;
   }
   .stream-text {
     font-size: 15px;

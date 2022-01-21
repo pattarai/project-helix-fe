@@ -43,11 +43,14 @@ export default function Home() {
     <>
       <BaseLayout>
         <div className="card-body d-md-flex align-items-center d-block">
-          <div id="no-stream" style={{ display: display.image }}>
+          <div
+            className="container-fluid text-center"
+            id="no-stream"
+            style={{ display: display.image }}
+          >
             <img
-              className="img-fluid px-md-3"
+              className="img-fluid no-stream h-auto w-55"
               src={NoLiveStream}
-              height={400}
               alt=""
             />
             <h5 className="text-center stream-text text-secondary">
@@ -63,7 +66,7 @@ export default function Home() {
               hasVideo={true}
             />
           </div>
-          <Chat roomKey="123"/>
+          <Chat roomKey="123" />
         </div>
       </BaseLayout>
     </>
