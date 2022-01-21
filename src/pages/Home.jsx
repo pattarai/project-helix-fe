@@ -4,24 +4,12 @@ import Marquee from "react-fast-marquee";
 import PopUp from "../components/PopUpCards";
 import Loader from "../components/Loader";
 import BaseLayout from "../components/BaseLayout";
-import firebase from "firebase";
-// import NoLiveStream from "../assets/images/NoStream.png"
-//
-// const user = firebase.auth().currentUser;
-//
-// const username=user.displayName;
-//
-// localStorage.setItem("username",username);
-// console.log(localStorage.getItem("username"));
-
-
 
 export default function Home() {
-  const [loader, setLoader] = useState(true);
   const { REACT_APP_YOUTUBE_API_KEY } = process.env;
+  const [loader, setLoader] = useState(true);
   const [videoItems, setVideoItems] = useState([]);
-
-
+  const [videoId, setVideoId] = useState(null);
 
   useEffect(() => {
     axios
@@ -35,40 +23,29 @@ export default function Home() {
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+
   return (
     <>
-        {loader ? (
-          <Loader />
-        ) : videoItems.length > 0 ? (
-         
-      <BaseLayout>
-        <div className="card-body d-md-flex align-items-center d-block">
-              <div id="no-stream">
-                {/* <img
-                  className="img-fluid px-md-3"
-                  src={NoLiveStream}
-                  height={400}
-                  alt=""
-                /> */}
-                <h5 className="text-center stream-text text-secondary">
-                  Live Stream is Down. Check out our recorded events!
-                </h5>
-              </div>
+      {loader ? (
+        <Loader />
+      ) : videoItems.length > 0 ? (
+        <BaseLayout>
+          <div
+            className={`${
+              videoId ? "d-md-flex" : "d-none"
+            } justify-content-center`}
+          >
+            <iframe
+              id="youtubeLive"
+              title="Youtube Live Stream"
+              className="col-12 col-md-10 pb-3 px-md-3 iframe-height"
+              src={videoId}
+              frameBorder="0"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </div>
 
-              <iframe
-                id="youtubeLive"
-                title="Youtube Live Stream"
-                className="col-12 col-md-8 px-md-3 pb-3 pb-md-0 iframe-height"
-                style={{ display: "none" }}
-                // src={NoLiveStream}
-                frameBorder="0"
-                allowFullScreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              ></iframe>
-
-            
-            </div>
           <Marquee
             direction="left"
             speed={50}
@@ -81,12 +58,9 @@ export default function Home() {
                 key={id}
                 onClick={() => {
                   window.scrollTo(0, 0);
-                  var livestream = document.getElementById("youtubeLive");
-                  livestream.style.display = "block";
-                  document.getElementById("no-stream").style.display = "none";
-                  livestream.src =
-                    "https://www.youtube.com/embed/" +
-                    videos.contentDetails.videoId;
+                  setVideoId(
+                    `https://www.youtube.com/embed/${videos.contentDetails.videoId}`
+                  );
                 }}
               >
                 <PopUp
@@ -96,11 +70,10 @@ export default function Home() {
               </button>
             ))}
           </Marquee>
-          </BaseLayout>
-        ) : (
-          <h1>No Data</h1>
-        )}
-      
+        </BaseLayout>
+      ) : (
+        <h1>No Data</h1>
+      )}
     </>
   );
 }
