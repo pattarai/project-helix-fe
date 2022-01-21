@@ -16,7 +16,7 @@ export default function Footer() {
   const currentYear = date.getFullYear();
   return (
     <>
-      <section className="fixed-bottom">
+      <section style={{ marginTop: "50px" }}>
         <div className="px-5">
           <div className="bg-secondary" style={{ height: "1px" }}></div>
         </div>
