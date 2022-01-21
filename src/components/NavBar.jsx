@@ -22,7 +22,7 @@ export default function NavBar() {
   }
   return (
     <>
-      <section className="d-flex align-items-center justify-content-between mx-4 my-3 ">
+      <section className="d-flex align-items-center justify-content-between mx-2 mx-md-4 my-3 ">
         <Toggle />
 
         <div className="d-flex">

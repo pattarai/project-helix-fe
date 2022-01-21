@@ -75,7 +75,11 @@ a {
 }
 
 .vh-100 {
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.vh-75 {
+  min-height: 75vh;
 }
 
 .customButton {

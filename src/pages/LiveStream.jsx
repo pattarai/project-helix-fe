@@ -7,10 +7,10 @@ import BaseLayout from "../components/BaseLayout";
 
 export default function Home() {
   let { REACT_APP_STREAM_KEY } = process.env;
-  const [display, setDisplay] = useState({ image: "", video: "none" });
   const username = localStorage.getItem("username");
+  const [displayImg, setDisplayImg] = useState(true);
 
-  function streams() {
+  useEffect(() => {
     axios
       .get("http://vpn.opencloud.pattarai.in:8000/api/streams", {
         auth: {
@@ -20,33 +20,31 @@ export default function Home() {
       })
       .then((res) => {
         let stream_publishers = res.data.live[REACT_APP_STREAM_KEY].publisher;
-        if (stream_publishers === null) {
-          setDisplay({ image: "", video: "none" });
-        } else {
-          setDisplay({ image: "none", video: "" });
+        console.log(stream_publishers);
+        if (stream_publishers !== null) {
+          setDisplayImg(false);
         }
       })
       .catch((err) => {
-        setDisplay({ image: "", video: "none" });
+        setDisplayImg(true);
       });
-  }
-
-  useEffect(() => {
-    streams();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
       <BaseLayout>
-        <div className="card-body d-md-flex align-items-center d-block">
-          <div
-            className="container-fluid text-center"
-            id="no-stream"
-            style={{ display: display.image }}
-          >
+        <div
+          className={`vh-75 ${
+            displayImg ? "d-flex" : "d-none"
+          } justify-content-center align-items-center `}
+          id="no-stream"
+        >
+          <div className="text-center">
             <img
-              className="img-fluid no-stream h-auto w-55"
+              className="img-fluid"
+              height="auto"
+              width="50%"
               src={NoLiveStream}
               alt=""
             />
@@ -54,15 +52,20 @@ export default function Home() {
               Live Stream is Down. See You Later..
             </h5>
           </div>
-          <div style={{ display: display.video }}>
-            <ReactFlvPlayer
-              className="col-12 col-md-8 px-md-3 pb-3 pb-md-0 iframe-height"
-              url={`http://vpn.opencloud.pattarai.in:8000/live/${REACT_APP_STREAM_KEY}.flv`}
-              isLive={true}
-              hasAudio={true}
-              hasVideo={true}
-            />
-          </div>
+        </div>
+
+        <div
+          className={`${
+            displayImg ? "d-none" : "d-md-flex"
+          } align-items-center `}
+        >
+          <ReactFlvPlayer
+            className="col-12 col-md-8 px-md-3 pb-3 pb-md-0 iframe-height"
+            url={`http://vpn.opencloud.pattarai.in:8000/live/${REACT_APP_STREAM_KEY}.flv`}
+            isLive={true}
+            hasAudio={true}
+            hasVideo={true}
+          />
           <Chat userName={username} roomKey="123" />
         </div>
       </BaseLayout>
