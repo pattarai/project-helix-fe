@@ -50,6 +50,10 @@ html::-webkit-scrollbar-thumb {
 }
 /* Custom Scrollbar */
 
+* {
+  color: var(--text-color);
+}
+
 body {
   background-color: var(--bg-color);
 }
@@ -58,20 +62,12 @@ body {
   background-color: var(--card-color);
 }
 
-.textColor {
-  color: var(--text-color);
-}
-
 a {
   color: inherit;
 }
 
 .main-bg {
   background-color: var(--main-color);
-}
-
-.w-55 {
-  width: 55%;
 }
 
 .vh-100 {
@@ -102,11 +98,15 @@ a {
   box-shadow: var(--button-shadow);
 }
 
+.text-pattarai-s,
 .text-pattarai {
   color: var(--text-color);
   font-family: Montserrat;
-  font-size: 2vw;
-  letter-spacing: 1.5vw;
+  font-size: 1.2vw;
+}
+
+.text-pattarai {
+  letter-spacing: 3.5vw;
 }
 
 @keyframes animate {
@@ -169,31 +169,6 @@ button {
   text-shadow: 0px 0px 0px transparent;
 }
 
-/* Take me home button - Start */
-.errorButton {
-  font-size: 20px;
-}
-.errorButton span {
-  position: relative;
-  transition: 0.5s;
-}
-.errorButton span:after {
-  content: "\00bb";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-.errorButton:hover span {
-  padding-right: 20px;
-}
-.errorButton:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-/* Take me home button - End */
-
 .iframe-height {
   height: 75vh;
 }
@@ -221,13 +196,10 @@ button {
   .title-word {
     font-size: 18vw;
   }
-  .text-pattarai {
+  .text-pattarai,
+  .text-pattarai-s {
     font-size: 2.5vw;
   }
-}
-
-.margin-left {
-  margin-left: 40px !important;
 }
 
 //youtube Embed css

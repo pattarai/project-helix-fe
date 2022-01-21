@@ -1,9 +1,8 @@
+import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "../firebase";
-import { useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import Button from "@mui/material/Button";
 import FadeIn from "../animations/FadeIn";
 import Particles from "../animations/Particles";
 import { checkTheme } from "./theme";
@@ -45,11 +44,17 @@ export default function LandingPage() {
           style={{ height: "80vh" }}
         >
           <div className="text-center">
-            <p className="text-pattarai text-center">PATTARAI'S</p>
+            <p className="mb-0">
+              <span className="text-pattarai">PATTARAI</span>{" "}
+              <span className="text-pattarai-s">'S</span>
+            </p>
             <p className="title-word text-center">H E L I X</p>
-            <Button class="customButton" onClick={signInWithGoogle}>
+            <button
+              className="button customButton mt-3"
+              onClick={signInWithGoogle}
+            >
               SIGN IN
-            </Button>
+            </button>
           </div>
         </div>
       </FadeIn>
