@@ -1,4 +1,4 @@
-import LaptopLogo from "../assets/images/error.svg";
+// import LaptopLogo from "../assets/images/error.svg";
 
 function Error404() {
   function takeHome() {
@@ -14,7 +14,7 @@ function Error404() {
           <h1 className="stream-text text-white mb-5">
             Oops! Seems like you are lost
           </h1>
-          <img src={LaptopLogo} className="" alt="Page not found" />
+          {/* <img src={LaptopLogo} className="" alt="Page not found" /> */}
           <button
             onClick={takeHome}
             className="errorButton mt-5 text-white btn btn-primary"
