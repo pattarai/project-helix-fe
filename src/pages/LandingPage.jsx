@@ -1,11 +1,9 @@
-import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "../firebase";
 import FadeIn from "../animations/FadeIn";
 import Particles from "../animations/Particles";
-import { checkTheme } from "./theme";
 import Toggle from "../components/DarkTheme";
 
 export default function LandingPage() {
@@ -28,10 +26,6 @@ export default function LandingPage() {
         /** @type {firebase.auth.OAuthCredential} */
       });
   }
-
-  useEffect(() => {
-    checkTheme();
-  }, []);
 
   return (
     <>

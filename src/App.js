@@ -4,14 +4,18 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-
+import { useEffect } from "react";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import LiveStream from "./pages/LiveStream";
 import Error404 from "./pages/Error404";
 import PrivateRoute from "./PrivateRoute";
+import { checkTheme } from "./pages/theme";
 
 export default function App() {
+  useEffect(() => {
+    checkTheme();
+  }, []);
   return (
     <Router>
       <Switch>
