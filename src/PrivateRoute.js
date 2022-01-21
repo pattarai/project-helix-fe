@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import firebase from "firebase/app";
+import Loader from "./components/Loader";
 
 export default function PrivateRoute(props) {
   const Component = props.component;
@@ -8,21 +9,18 @@ export default function PrivateRoute(props) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        setUser(user);
-        setLoading(false);
-      } else {
-        setUser(false);
-        setLoading(false);
+    firebase.auth().onAuthStateChanged((currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
       }
+      setLoading(false);
     });
   }, []);
 
   return (
     <>
       {loading ? (
-        null
+        <Loader />
       ) : user ? (
         <Component />
       ) : (
