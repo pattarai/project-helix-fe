@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Marquee from "react-fast-marquee";
 import PopUp from "../components/PopUpCards";
 import Loader from "../components/Loader";
 import BaseLayout from "../components/BaseLayout";
