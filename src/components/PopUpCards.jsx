@@ -4,8 +4,9 @@ function PopUp(props) {
   return (
     <>
       <motion.div
+        onClick={props.customClickEvent}
         whileHover={{ scale: 1.08 }}
-        className="card cardColor textColor text-justify m-5 align-items-center"
+        className="card card-btn cardColor textColor text-justify m-5 d-flex align-items-center justify-content-center"
         style={{
           width: "17em",
           boxShadow:
@@ -18,8 +19,8 @@ function PopUp(props) {
           alt=""
           style={{ height: "140px", width: "210px" }}
         />
-        <div className="card-body d-flex align-content-between flex-wrap">
-          <h6 className="card-title px-2 text-left col-12 p-0 font-weight-bold ">
+        <div className="card-body px-0">
+          <h6 className="card-title px-2 col-12 p-0 font-weight-bold text-center">
             {props.title ? props.title : "Check this out"}
           </h6>
         </div>

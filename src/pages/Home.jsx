@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Marquee from "react-fast-marquee";
 import PopUp from "../components/PopUpCards";
 import Loader from "../components/Loader";
 import BaseLayout from "../components/BaseLayout";
@@ -14,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     axios
       .get(
-        `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails%2Cstatus&playlistId=PLLCdGWbcw9uwhUPaCmtQlHlMKyE6R7a1P&key=${REACT_APP_YOUTUBE_API_KEY}`
+        `https://www.googleapis.com/youtube/v3/search?key=${REACT_APP_YOUTUBE_API_KEY}&channelId=UC24MOAmQKzWK5-6DyUaa8Aw&part=snippet,id&order=date&maxResults=100`
       )
       .then((res) => {
         const videoitems = res.data.items;
@@ -46,7 +45,25 @@ export default function Home() {
             ></iframe>
           </div>
 
-          <Marquee
+          <section className="mt-md-5 row justify-content-center">
+            {videoItems.map((video, id) => {
+              return (
+                <PopUp
+                  key={id}
+                  src={video.snippet.thumbnails.high.url}
+                  title={video.snippet.title}
+                  customClickEvent={() => {
+                    window.scrollTo(0, 0);
+                    setVideoId(
+                      `https://www.youtube.com/embed/${video.contentDetails.videoId}`
+                    );
+                  }}
+                />
+              );
+            })}
+          </section>
+
+          {/* <Marquee
             direction="left"
             speed={50}
             gradient
@@ -69,7 +86,7 @@ export default function Home() {
                 />
               </button>
             ))}
-          </Marquee>
+          </Marquee> */}
         </BaseLayout>
       ) : (
         <h1>No Data</h1>

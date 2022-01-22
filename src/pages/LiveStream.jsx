@@ -34,6 +34,7 @@ export default function Home() {
   return (
     <>
       <BaseLayout>
+        <Chat userName={username} roomKey="123" />
         <div
           className={`vh-75 ${
             displayImg ? "d-flex" : "d-none"
@@ -66,7 +67,6 @@ export default function Home() {
             hasAudio={true}
             hasVideo={true}
           />
-          <Chat userName={username} roomKey="123" />
         </div>
       </BaseLayout>
     </>
