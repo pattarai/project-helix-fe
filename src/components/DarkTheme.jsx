@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { setLocalTheme } from "../pages/theme";
-import Button from "@mui/material/Button";
 
 export default function Toggle() {
   const [btnImage, setBtnImage] = useState(() => {
@@ -25,9 +24,9 @@ export default function Toggle() {
 
   return (
     <>
-      <Button class="themeButton" onClick={handleOnClick}>
+      <button className="themeButton" onClick={handleOnClick}>
         {btnImage}
-      </Button>
+      </button>
     </>
   );
 }

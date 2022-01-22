@@ -1,7 +1,6 @@
 // @import "./landingpage.scss";
 @import "~bootstrap/scss/bootstrap";
 // @import "../fonts/fonts.css";
-@import "./home.scss";
 @import "./landingpage.scss";
 
 // @import "bootstrap/dist/css/bootstrap.min.css";
@@ -51,6 +50,7 @@ html::-webkit-scrollbar-thumb {
 /* Custom Scrollbar */
 
 * {
+  transition: background 0.4s;
   color: var(--text-color);
 }
 
