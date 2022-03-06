@@ -30,7 +30,7 @@ export default function Login() {
               <lable>EMAIL ID</lable><br/>
               <input type="/text"></input><br/>
               <lable>PASSWORD</lable><br/>
-              <input type="password" name="passoword"/>
+              <input type="password"/>
             </form>
               <button
                 className="button customButton mt-3 mx-4"
