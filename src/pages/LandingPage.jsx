@@ -9,6 +9,14 @@ import Toggle from "../components/DarkTheme";
 export default function LandingPage() {
   const history = useHistory();
 
+  const loginpage= () =>{
+    history.push("/login");
+  }
+
+  const signpage= () =>{
+    history.push("/Signup");
+  }
+
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       const username = user.displayName;
@@ -44,10 +52,16 @@ export default function LandingPage() {
             </p>
             <p className="title-word text-center">H E L I X</p>
             <button
-              className="button customButton mt-3"
-              onClick={signInWithGoogle}
+              className="button customButton mt-3 mx-4"
+              onClick={loginpage}
             >
-              SIGN IN
+              LOGIN
+            </button>
+            <button
+              className="button customButton customb mt-3 mx-5"
+              onClick={signpage}
+            >
+              SIGN UP
             </button>
           </div>
         </div>

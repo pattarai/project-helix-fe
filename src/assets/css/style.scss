@@ -89,6 +89,18 @@ a {
   box-shadow: var(--button-shadow);
 }
 
+.customb{
+  background-color: var(--button-text-color);
+  color: var(--button-bg-color);
+  font-weight: bold;
+  font-family: Jost;
+  letter-spacing: 1px;
+  border-radius: 7px;
+  padding: 10px;
+  box-shadow: var(--button-shadow);
+
+}
+
 .themeButton {
   background-color: var(--theme-button-color);
   color: var(--button-text-color);

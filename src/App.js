@@ -7,6 +7,8 @@ import {
 import { useEffect } from "react";
 import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import LiveStream from "./pages/LiveStream";
 import Error404 from "./pages/Error404";
 import PrivateRoute from "./PrivateRoute";
@@ -21,6 +23,8 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <PrivateRoute exact path="/home" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
         <PrivateRoute exact path="/live" component={LiveStream} />
         <Route exact path="/404" component={Error404} />
         <Redirect to="/404" />
