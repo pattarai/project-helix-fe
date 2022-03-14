@@ -22,28 +22,30 @@ export default function Login() {
           </p>
           <div
             className="d-flex align-items-center justify-content-center main-bg w-100"
-            style={{ height: "65vh" }}
+            style={{ height: "80vh" }}
           >
-            <div className="">
+            <div className="cus-page">
               <h3>HELLO, WELCOME BACK</h3>
             <form>
               <lable>EMAIL ID</lable><br/>
-              <input type="/text"></input><br/>
+              <input type="text"></input><br/>
               <lable>PASSWORD</lable><br/>
               <input type="password"/>
             </form>
+              <div className="d-flex">
               <button
-                className="button customButton mt-3 mx-4"
+                className="button customButton mt-3"
                 onClick={back}
               >
                 BACK
               </button>
               <button
-                className="button customButton customb mt-3 mx-5"
+                className="button customButton customb mt-3 ms-auto"
                 onClick={loginpage}
               >
                 LOGIN
               </button>
+              </div>
             </div>
           </div>
         </FadeIn>

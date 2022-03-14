@@ -24,24 +24,32 @@ export default function Signup() {
             className="d-flex align-items-center justify-content-center main-bg w-100"
             style={{ height: "80vh" }}
           >
-            <div className="text-center">
-              <p className="mb-0">
-                <span className="text-pattarai">PATTARAI</span>{" "}
-                <span className="text-pattarai-s">'S</span>
-              </p>
-              <p className="title-word text-center">H E L I X</p>
+            <div className="cus-page">
+            <h4>SETUP YOUR PROFILE</h4>
+            <form>
+            <lable>USER NAME</lable><br/>
+              <input type="text"></input><br/>
+              <lable>EMAIL ID</lable><br/>
+              <input type="text"></input><br/>
+              <lable>PASSWORD</lable><br/>
+              <input type="password"/><br/>
+              <lable>CONFIRM PASSWORD</lable><br/>
+              <input type="password"/>
+            </form>
+              <div className="d-flex">
               <button
-                className="button customButton mt-3 mx-4"
+                className="button customButton mt-3"
                 onClick={back}
               >
                 BACK
               </button>
               <button
-                className="button customButton customb mt-3 mx-5"
+                className="button customButton customb mt-3 ms-auto"
                 onClick={signpage}
               >
                 SIGN UP
               </button>
+              </div>
             </div>
           </div>
         </FadeIn>

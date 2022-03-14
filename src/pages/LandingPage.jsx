@@ -43,7 +43,7 @@ export default function LandingPage() {
         </p>
         <div
           className="d-flex align-items-center justify-content-center main-bg w-100"
-          style={{ height: "80vh" }}
+          style={{ height: "80vh"}}
         >
           <div className="text-center">
             <p className="mb-0">
