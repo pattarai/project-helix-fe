@@ -52,7 +52,7 @@ export default function Login() {
           className="d-flex align-items-center justify-content-center main-bg w-100"
           style={{ height: "80vh" }}
         >
-          <div className="cus-page">
+          <div className="cus-page welcome-text">
             <h3>HELLO, WELCOME BACK</h3>
             <form>
               <lable>EMAIL ID</lable>
