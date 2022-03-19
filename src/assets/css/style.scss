@@ -89,7 +89,7 @@ a {
   box-shadow: var(--button-shadow);
 }
 
-.customb{
+.customb {
   background-color: var(--button-text-color);
   color: var(--button-bg-color);
   font-weight: bold;
@@ -98,7 +98,6 @@ a {
   border-radius: 7px;
   padding: 10px;
   box-shadow: var(--button-shadow);
-
 }
 
 .themeButton {
@@ -115,6 +114,11 @@ a {
   color: var(--text-color);
   font-family: Montserrat;
   font-size: 1.2vw;
+}
+
+.welcome-text {
+  font-family: Montserrat;
+  font-size: 1.5vw;
 }
 
 .text-pattarai {
@@ -232,18 +236,18 @@ button {
   position: absolute;
 }
 
-.cus-page{
-  height:39vh;
+.cus-page {
+  height: 39vh;
   font-size: 16px;
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content: space-between;
 }
-.cus-page input{
+.cus-page input {
   color: #000000;
   font-size: 14px;
   text-align: center;
   border-radius: 15px;
-  width:290px;
-  height:36px;
+  width: 290px;
+  height: 36px;
 }

@@ -9,13 +9,13 @@ import Toggle from "../components/DarkTheme";
 export default function LandingPage() {
   const history = useHistory();
 
-  const loginpage= () =>{
+  const loginpage = () => {
     history.push("/login");
-  }
+  };
 
-  const signpage= () =>{
+  const signpage = () => {
     history.push("/Signup");
-  }
+  };
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -25,15 +25,15 @@ export default function LandingPage() {
     }
   });
 
-  function signInWithGoogle() {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then((result) => {
-        /** @type {firebase.auth.OAuthCredential} */
-      });
-  }
+  // function signInWithGoogle() {
+  //   var provider = new firebase.auth.GoogleAuthProvider();
+  //   firebase
+  //     .auth()
+  //     .signInWithPopup(provider)
+  //     .then((result) => {
+  //       /** @type {firebase.auth.OAuthCredential} */
+  //     });
+  // }
 
   return (
     <>
@@ -43,7 +43,7 @@ export default function LandingPage() {
         </p>
         <div
           className="d-flex align-items-center justify-content-center main-bg w-100"
-          style={{ height: "80vh"}}
+          style={{ height: "80vh" }}
         >
           <div className="text-center">
             <p className="mb-0">
