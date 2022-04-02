@@ -26,7 +26,8 @@ export default function Login() {
           >
             <div className="cus-page">
               <h3>User Information</h3>
-            
+            <p>NAME</p>
+            <p>email id</p>
               <div className="d-flex">
               <button
                 className="button customButton mt-3"
