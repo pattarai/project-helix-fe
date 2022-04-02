@@ -11,7 +11,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import LiveStream from "./pages/LiveStream";
 import Error404 from "./pages/Error404";
-import UserProfile from "./pages/UserProfile.jsx";
+import UserProfile from "./pages/Userprofile";
+
 import PrivateRoute from "./PrivateRoute";
 import { checkTheme } from "./pages/theme";
 

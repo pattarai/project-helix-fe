@@ -23,7 +23,7 @@ export default function Login() {
   const logIn = () => {
     const auth = JSON.parse(localStorage.getItem("auth"));
     if (auth) {
-      obj = setAuth(auth);
+      let obj = setAuth(auth);
       if (auth.name) {
         console.log();
       }
