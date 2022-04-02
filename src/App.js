@@ -11,7 +11,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import LiveStream from "./pages/LiveStream";
 import Error404 from "./pages/Error404";
-import Userprofile from "./pages/Userprofile.jsx";
+import UserProfile from "./pages/Userprofile";
+
 import PrivateRoute from "./PrivateRoute";
 import { checkTheme } from "./pages/theme";
 import workshop from "./pages/workshop";
@@ -31,7 +32,7 @@ export default function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/live" component={LiveStream} />
         <Route exact path="/404" component={Error404} />
-        <Route exact path="/profile" component={Userprofile} />
+        <Route exact path="/profile" component={UserProfile} />
         <Redirect to="/404" />
       </Switch>
     </Router>
