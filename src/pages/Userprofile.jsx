@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import FadeIn from "../animations/FadeIn";
 import Particles from "../animations/Particles";
 import Toggle from "../components/DarkTheme";
+import Login from "../pages/Login";
 
 export default function Login() {
     const history = useHistory();
@@ -10,7 +11,7 @@ export default function Login() {
       history.push("/");
     }
   
-    const loginpage= () =>{
+    const Login= () =>{
       history.push("/login");
     }
   
