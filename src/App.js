@@ -26,7 +26,7 @@ export default function App() {
         <PrivateRoute exact path="/home" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
-        <PrivateRoute exact path="/live" component={LiveStream} />
+        <Route exact path="/live" component={LiveStream} />
         <Route exact path="/404" component={Error404} />
         <Route exact path="/profile" component={UserProfile} />
         <Redirect to="/404" />

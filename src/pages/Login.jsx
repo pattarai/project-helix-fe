@@ -2,16 +2,44 @@ import { useHistory } from "react-router-dom";
 import FadeIn from "../animations/FadeIn";
 import Particles from "../animations/Particles";
 import Toggle from "../components/DarkTheme";
+import axios from "axios";
+import { useState } from "react";
 
 export default function Login() {
+  const [auth, setAuth] = useState({});
+  let token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJlZ2lzcmF5bW9uZEBnbWFpbC5jb20iLCJ1c2VySWQiOjEzLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY0NzI4MjM4OCwiZXhwIjoxNjQ3MzI1NTg4fQ.92xsz629tTybKvaxAWEmiE6GujPKNogF0KXnMScaFdI";
+
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+
   const history = useHistory();
 
   const back = () => {
     history.push("/");
   };
 
-  const loginpage = () => {
-    history.push("/login");
+  const logIn = () => {
+    const auth = JSON.parse(localStorage.getItem("auth"));
+    if (auth) {
+      obj = setAuth(auth);
+      if (auth.name) {
+        console.log();
+      }
+    }
+    axios
+      .post("http://localhost:5000/v1/auth/login", {
+        email: "cool@gmail.com",
+        password: "cool@2003",
+      })
+      .then(function (response) {
+        console.log(response);
+        history.push("/live");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
@@ -41,7 +69,7 @@ export default function Login() {
               </button>
               <button
                 className="button customButton customb mt-3 ms-auto"
-                onClick={loginpage}
+                onClick={logIn}
               >
                 LOGIN
               </button>
