@@ -9,41 +9,30 @@ export default function Signup() {
   const [auth, setAuth] = useState({
     name: "",
     email: "",
-    password: "",
     admin: false,
+    token: "",
   });
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
-
-  const back = () => {
-    history.push("/");
-  };
-
-  useEffect(() => {
-    console.log(auth);
-    localStorage.setItem("auth", JSON.stringify(auth));
-  }, [auth]);
 
   const signUp = () => {
     axios
       .post("http://localhost:5000/v1/auth/signup", {
-        name: name,
-        email: email,
+        name: auth.name,
+        email: auth.email,
         password: password,
-        institute: "Loyola-ICAM",
-        department: "CSE",
-        year: 4,
         admin: false,
       })
       .then((response) => {
         setAuth({
-          name: name,
-          email: email,
-          password: password,
-          admin: false,
+          ...auth,
+          token: response.data.token,
+          name: response.data.createdUser.name,
+          email: response.data.createdUser.email,
+          admin: response.data.createdUser.admin,
         });
+        localStorage.setItem("auth", JSON.stringify(auth));
+        history.push("/live");
       })
       .catch(function (error) {
         console.log(error);
@@ -56,53 +45,37 @@ export default function Signup() {
         <p className="p-3">
           <Toggle />
         </p>
-        <div
-          className="d-flex align-items-center justify-content-center main-bg w-100"
-          style={{ height: "80vh" }}
-        >
-          <div className="cus-page">
-            <h4>SETUP YOUR PROFILE</h4>
-            <form>
-              <lable>USER NAME</lable>
-              <br />
+        <div className="d-flex justify-content-center align-items-center flex-column vh-75">
+          <div className="form-group">
+            <form className="d-flex justify-content-center flex-column">
+              <label className="form-label">Username</label>
               <input
-                type="text"
-                onChange={(e) => setName(e.target.value)}
-              ></input>
-              <br />
-              <lable>EMAIL ID</lable>
-              <br />
+                type="email"
+                className="form-control"
+                onChange={(e) => setAuth({ ...auth, name: e.target.value })}
+              />
+              <label className="form-label">Email id</label>
               <input
-                type="text"
-                onChange={(e) => setEmail(e.target.value)}
-              ></input>
-              <br />
-              <lable>PASSWORD</lable>
-              <br />
+                type="email"
+                className="form-control"
+                onChange={(e) => setAuth({ ...auth, email: e.target.value })}
+              />
+              <label className="form-label mt-3">Password</label>
               <input
                 type="password"
+                className="form-control"
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <br />
-              <lable>CONFIRM PASSWORD</lable>
-              <br />
-              <input type="password" />
             </form>
-            <div className="d-flex">
-              <button className="button customButton mt-3" onClick={back}>
-                BACK
-              </button>
-              <button
-                className="button customButton customb mt-3 ms-auto"
-                onClick={signUp}
-              >
-                SIGN UP
-              </button>
-            </div>
           </div>
+          <button
+            className="btn customButton align-self-center mt-3"
+            onClick={signUp}
+          >
+            SignUp
+          </button>
         </div>
       </FadeIn>
-      <Particles />
     </>
   );
 }
