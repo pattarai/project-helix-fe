@@ -25,13 +25,13 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={LandingPage} />
-        <Route exact path="/home" component={Home} />
+        <PrivateRoute exact path="/home" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/workshop" component={workshop} />
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/live" component={LiveStream} />
+        <PrivateRoute exact path="/live" component={LiveStream} />
         <Route exact path="/404" component={Error404} />
-        <Route exact path="/profile" component={UserProfile} />
+        <PrivateRoute exact path="/profile" component={UserProfile} />
         <Redirect to="/404" />
       </Switch>
     </Router>
