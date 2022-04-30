@@ -11,9 +11,11 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import LiveStream from "./pages/LiveStream";
 import Error404 from "./pages/Error404";
-import UserProfile from "./pages/UserProfile";
+import UserProfile from "./pages/Userprofile";
+
 import PrivateRoute from "./PrivateRoute";
 import { checkTheme } from "./pages/theme";
+import workshop from "./pages/workshop";
 
 export default function App() {
   useEffect(() => {
@@ -23,8 +25,9 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={LandingPage} />
-        <PrivateRoute exact path="/home" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/workshop" component={workshop} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/live" component={LiveStream} />
         <Route exact path="/404" component={Error404} />
