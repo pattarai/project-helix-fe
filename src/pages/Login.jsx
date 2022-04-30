@@ -26,9 +26,9 @@ export default function Login() {
         history.push("/live");
       })
       .catch(function (error) {
-        if (error.response.data["errorMessage"] == "Invalid Email") {
+        if (error.response.data["errorMessage"] === "Invalid Email") {
           alert("Invalid Email");
-        } else if (error.response.data["errorMessage"] == "Invalid Password") {
+        } else if (error.response.data["errorMessage"] === "Invalid Password") {
           alert("Invalid Password");
         }
       });
