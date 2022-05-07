@@ -8,15 +8,8 @@ export default function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [auth, setAuth] = useState();
+
   const logIn = () => {
-    const auth = JSON.parse(localStorage.getItem("auth"));
-    if (auth) {
-      let obj = setAuth(auth);
-      if (auth.name) {
-        console.log();
-      }
-    }
     axios
       .post("http://localhost:5000/v1/auth/login", {
         email: email,
@@ -33,9 +26,9 @@ export default function Login() {
         history.push("/live");
       })
       .catch(function (error) {
-        if (error.response.data["errorMessage"] == "Invalid Email") {
+        if (error.response.data["errorMessage"] === "Invalid Email") {
           alert("Invalid Email");
-        } else if (error.response.data["errorMessage"] == "Invalid Password") {
+        } else if (error.response.data["errorMessage"] === "Invalid Password") {
           alert("Invalid Password");
         }
       });
