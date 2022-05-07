@@ -60,13 +60,16 @@ export default function Home() {
             displayImg ? "d-none" : "d-md-flex"
           } align-items-center `}
         >
-          <ReactFlvPlayer
+          {/* <ReactFlvPlayer
             className="col-12 col-md-8 px-md-3 pb-3 pb-md-0 iframe-height"
             url={`http://vpn.opencloud.pattarai.in:8000/live/${REACT_APP_STREAM_KEY}.flv`}
             isLive={true}
             hasAudio={true}
             hasVideo={true}
-          />
+          /> */}
+          <button>
+            <a href="http://localhost:3000/?room=Pattarai">LIVE</a>
+          </button>
         </div>
       </BaseLayout>
     </>
