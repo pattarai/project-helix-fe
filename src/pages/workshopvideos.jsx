@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import Wvideos from "../../pages/workshopvideos";
 
-export default function Cards(props) {
+export default function Wvideos(props) {
 
   return (
     <>

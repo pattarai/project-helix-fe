@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import { useHistory } from "react-router-dom";
 // import FadeIn from "../animations/FadeIn";
 // import Particles from "../animations/Particles";
@@ -82,7 +81,6 @@
 //     </>
 //   );
 // }
-=======
 import { useHistory } from "react-router-dom";
 import FadeIn from "../animations/FadeIn";
 import Toggle from "../components/DarkTheme";
@@ -160,4 +158,3 @@ export default function Login() {
     </>
   );
 }
->>>>>>> 057841099adc0b5f2a817d5e9d9d2796123a0e08
